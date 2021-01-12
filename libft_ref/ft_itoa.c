@@ -6,12 +6,11 @@
 /*   By: yongjlee <stareta1202@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:43:34 by yongjlee          #+#    #+#             */
-/*   Updated: 2020/12/03 03:36:52 by yongjlee         ###   ########.fr       */
+/*   Updated: 2021/01/12 09:19:29 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 int		ft_get_digit_count(long int n)
 {

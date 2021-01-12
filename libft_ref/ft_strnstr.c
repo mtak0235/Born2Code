@@ -6,12 +6,13 @@
 /*   By: yongjlee <stareta1202@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 21:33:21 by yongjlee          #+#    #+#             */
-/*   Updated: 2020/12/05 22:30:43 by yongjlee         ###   ########.fr       */
+/*   Updated: 2021/01/12 09:08:59 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <string.h>
-#include "libft.h"
+//#include "libft.h"
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {

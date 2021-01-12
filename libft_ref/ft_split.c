@@ -6,7 +6,7 @@
 /*   By: yongjlee <stareta1202@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 21:03:22 by yongjlee          #+#    #+#             */
-/*   Updated: 2020/12/06 14:12:16 by yongjlee         ###   ########.fr       */
+/*   Updated: 2021/01/12 05:42:04 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char			**ft_split(char const *s, char c)
 	unsigned int	num_str;
 	unsigned int	i;
 
-	if (s == '\0')
+	if (!s)
 		return (0);
 	num_str = check_num(s, c);
 	if (!(temp = (char **)malloc(sizeof(char *) * (num_str + 1))))

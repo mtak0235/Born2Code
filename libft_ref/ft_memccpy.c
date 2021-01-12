@@ -3,33 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yongjlee <stareta1202@gmail.com>           +#+  +:+       +#+        */
+/*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 19:59:03 by yongjlee          #+#    #+#             */
-/*   Updated: 2020/12/05 22:22:35 by yongjlee         ###   ########.fr       */
+/*   Created: 2020/12/23 07:55:22 by mtak              #+#    #+#             */
+/*   Updated: 2021/01/11 14:42:10 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned char	*temp_dst;
-	unsigned char	*temp_src;
-	unsigned char	word;
-	size_t			i;
+	unsigned char		*new_dst;
+	const unsigned char	*new_src;
 
-	temp_dst = (unsigned char *)s1;
-	temp_src = (unsigned char *)s2;
-	word = c;
-	i = 0;
-	while (i < n)
+	new_dst = dst;
+	new_src = src;
+	while (n--)
 	{
-		temp_dst[i] = temp_src[i];
-		if (temp_src[i] == word)
-			return (&s1[i + 1]);
-		i++;
+		if (*new_src == (unsigned char)c)
+		{
+			*new_dst = *new_src;
+			return ((void *)++new_dst);
+		}
+		*new_dst++ = *new_src++;
 	}
-	return (0);
+	return (NULL);
 }
