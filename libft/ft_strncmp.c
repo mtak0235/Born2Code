@@ -6,7 +6,7 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 10:06:51 by mtak              #+#    #+#             */
-/*   Updated: 2021/01/12 07:27:00 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/12 10:06:00 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	if (i == n)
 		return (0);
-	return ((unsigned char)s1[i] = (unsigned char)s2[i]);
+	return ((unsigned char)s1[i] -  (unsigned char)s2[i]);
 }
