@@ -6,7 +6,7 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 02:10:50 by mtak              #+#    #+#             */
-/*   Updated: 2021/01/12 07:56:07 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/12 09:19:37 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ static int	ft_itoa_len(long int n)
 	return (len);
 }
 
-char		*ft_itoa(int n)
+char		*ft_itoa(int a)
 {
-	char	*ret;
-	int		sign;
-	int		len;
+	char		*ret;
+	int			sign;
+	int			len;
+	long int	n;
 
+	n = a;
 	sign = n < 0 ? -1 : 1;
 	len = ft_itoa_len(n);
 	if (!(ret = (char *)malloc(sizeof(char) * len + 1)))
