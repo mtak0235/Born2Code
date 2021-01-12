@@ -6,7 +6,7 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 10:49:43 by mtak              #+#    #+#             */
-/*   Updated: 2021/01/12 09:47:41 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/12 10:01:29 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ char		*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!*little)
-		return (char *)big;
+	if (!little[0])
+		return ((char *)big);
 	i = 0;
 	while (big[i] && i < len)
 	{
