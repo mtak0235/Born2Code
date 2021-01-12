@@ -6,7 +6,7 @@
 /*   By: yongjlee <stareta1202@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 21:50:45 by yongjlee          #+#    #+#             */
-/*   Updated: 2020/12/05 15:03:04 by yongjlee         ###   ########.fr       */
+/*   Updated: 2021/01/12 09:53:34 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string.h>
 # include <limits.h>
+# include <stdlib.h>
 
 void				*ft_memset(void *s, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
