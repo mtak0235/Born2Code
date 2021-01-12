@@ -6,14 +6,16 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 17:01:31 by mtak              #+#    #+#             */
-/*   Updated: 2021/01/11 07:54:59 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/12 07:45:21 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_atoi(const char *str)
 {
-	int	sign;
-	int	num;
+	int		sign;
+	size_t	num;
 
 	while (*str == 32 || (9 <= *str && *str <= 13))
 		str++;
@@ -31,5 +33,9 @@ int		ft_atoi(const char *str)
 		num = num + *str - 48;
 		str++;
 	}
+	if (num > LLONG_MAX - 1 && sign == 1)
+		return (-1);
+	if (num > LLONG_MAX && sign == -1)
+		return (0);
 	return (sign * num);
 }

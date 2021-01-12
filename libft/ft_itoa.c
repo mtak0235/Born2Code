@@ -6,13 +6,13 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 02:10:50 by mtak              #+#    #+#             */
-/*   Updated: 2021/01/12 05:22:07 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/12 07:56:07 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_itoa_len(int n)
+static int	ft_itoa_len(long int n)
 {
 	int	len;
 

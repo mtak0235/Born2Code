@@ -6,7 +6,7 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 05:09:00 by mtak              #+#    #+#             */
-/*   Updated: 2021/01/11 14:53:46 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/12 08:02:24 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_head;
 	t_list	*new_next;
 
-	if (!lst || !f || !del)
+	if (!lst || !f)
 		return (NULL);
 	if (!(new_head = ft_lstnew(f(lst->content))))
 		return (NULL);
