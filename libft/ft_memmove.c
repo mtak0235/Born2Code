@@ -6,7 +6,7 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 13:49:02 by mtak              #+#    #+#             */
-/*   Updated: 2020/12/24 13:41:56 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/11 15:59:52 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char *new_dst;
-	const unsigned char *new_src;
+	unsigned char		*new_dst;
+	const unsigned char	*new_src;
 
 	new_dst = dst;
 	new_src = src;
-	if(dst < src)
+	if (dst < src)
 	{
-		while(n--)
+		while (n--)
 			*new_dst++ = *new_src++;
 	}
 	else
 	{
 		new_dst += (n - 1);
 		new_src += (n - 1);
-		while(n--)
+		while (n--)
 			*new_dst-- = *new_src--;
 	}
 	return (dst);
 }
-
-

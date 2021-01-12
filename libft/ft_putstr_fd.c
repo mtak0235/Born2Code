@@ -6,7 +6,7 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 08:36:35 by mtak              #+#    #+#             */
-/*   Updated: 2021/01/11 02:06:51 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/11 16:19:42 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if(fd < 0 || !s)
+	if (fd < 0 || !s)
 		return ;
 	write(fd, s, ft_strlen(s));
 }
-

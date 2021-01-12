@@ -6,13 +6,13 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 15:22:54 by mtak              #+#    #+#             */
-/*   Updated: 2020/12/25 04:11:46 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/11 14:43:32 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	if('a' <= c && c <= 'z')
+	if ('a' <= c && c <= 'z')
 		return (c - 32);
 	return (c);
 }

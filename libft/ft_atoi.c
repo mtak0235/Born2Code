@@ -6,21 +6,21 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 17:01:31 by mtak              #+#    #+#             */
-/*   Updated: 2020/12/27 02:10:57 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/11 07:54:59 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
-	int sign;
-	int num;
+	int	sign;
+	int	num;
 
 	while (*str == 32 || (9 <= *str && *str <= 13))
 		str++;
 	sign = 1;
-	if(*str == '+' || *str == '-')
+	if (*str == '+' || *str == '-')
 	{
-		if(*str == '-')
+		if (*str == '-')
 			sign *= -1;
 		str++;
 	}
@@ -31,6 +31,5 @@ int ft_atoi(const char *str)
 		num = num + *str - 48;
 		str++;
 	}
-	return sign * num;
+	return (sign * num);
 }
-

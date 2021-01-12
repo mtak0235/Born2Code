@@ -6,7 +6,7 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 06:11:23 by mtak              #+#    #+#             */
-/*   Updated: 2020/12/26 07:50:33 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/11 16:01:57 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if(lst == NULL || del == 0)
+	if (lst == NULL || del == 0)
 		return ;
 	del(lst->content);
 	free(lst);

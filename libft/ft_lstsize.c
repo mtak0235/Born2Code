@@ -6,21 +6,21 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 07:12:38 by mtak              #+#    #+#             */
-/*   Updated: 2021/01/10 07:14:02 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/11 14:49:31 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int size;
 
 	size = 0;
-	while(lst)
+	while (lst)
 	{
 		size++;
 		lst = lst->next;
 	}
-	return size;
+	return (size);
 }

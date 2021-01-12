@@ -6,14 +6,15 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 15:19:49 by mtak              #+#    #+#             */
-/*   Updated: 2020/12/25 04:11:59 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/11 14:40:50 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	if('A' <= c && c <= 'Z')
+	if ('A' <= c && c <= 'Z')
 		return (c + 32);
 	return (c);
 }

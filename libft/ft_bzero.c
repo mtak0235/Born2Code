@@ -6,7 +6,7 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 07:08:27 by mtak              #+#    #+#             */
-/*   Updated: 2020/12/23 07:13:22 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/11 11:47:13 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_bzero(void *dst, size_t n)
 	unsigned char *new_dst;
 
 	new_dst = dst;
-	while(n--)
+	while (n--)
 		*new_dst++ = '\0';
 }
