@@ -24,8 +24,8 @@ HEADER = libft.h
 
 all : $(NAME)
 	
-bonus : $(OBJS_BONUS)
-	ar crvs $(NAME) $(OBJS_BONUS)
+bonus : $(OBJS_BONUS) $(OBJS)
+	ar crvs $(NAME) $(OBJS_BONUS) $(OBJS)
 
 %.o : %.c $(HEADER)
 	$(CC) -c $(CFLAGS) $< -o $@
