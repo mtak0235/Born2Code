@@ -6,12 +6,11 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 16:57:04 by mtak              #+#    #+#             */
-/*   Updated: 2021/01/11 14:58:33 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/13 11:24:22 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char			**ft_free(char **temp)
 {
