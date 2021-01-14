@@ -6,7 +6,7 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 02:42:04 by mtak              #+#    #+#             */
-/*   Updated: 2021/01/12 05:21:00 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/14 03:51:32 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_len = ft_strlen(s);
 	if (!s)
 		return (0);
-	if (s_len - 1 <= start)
+	if (s_len <= start)
 		return (ft_strdup(""));
 	if (!(extract = (char *)malloc(sizeof(char) * (len + 1))))
 		return (0);
