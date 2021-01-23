@@ -45,7 +45,7 @@ int	get_next_line(int fd, char **line)
 
 	if (fd < 0 || !line || BUFFER_SIZE < 1)
 		return (-1);
-	if ((save[fd]) && (nl_idx = find_nl_idx(save[fd])) >= 0)
+	if ((save[fd]) && (nl_idx = find_nl_idx(save[fd])) >= 0 || read(fd, buff, 0) < 0)
 		return (put_line(line, save[fd], nl_idx));
 	while ((read_bytes = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
