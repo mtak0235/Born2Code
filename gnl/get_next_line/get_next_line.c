@@ -43,7 +43,7 @@ int	get_next_line(int fd, char **line)
 	int			nl_idx;
 	int			read_bytes;
 
-	if (fd < 0 || !line || BUFFER_SIZE < 1)
+	if (fd < 0 || !line || BUFFER_SIZE < 1 || read(fd, buff, 0) < 0)
 		return (-1);
 	if (save && (nl_idx = find_nl_idx(save)) >= 0)
 		return (put_line(line, save, nl_idx));
