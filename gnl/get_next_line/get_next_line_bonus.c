@@ -38,7 +38,7 @@ int	put_line(char **line, char *save, int nl_idx)
 
 int	get_next_line(int fd, char **line)
 {
-	static char	*save[1023];
+	static char	*save[256];
 	char		buff[BUFFER_SIZE + 1];
 	int			nl_idx;
 	int			read_bytes;
