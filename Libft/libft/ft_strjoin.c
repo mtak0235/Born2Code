@@ -18,10 +18,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_s2;
 	char	*comb_str;
 
+	if (!s1)
+		return (ft_substr(s2, 0, ft_strlen(s2)));
+	if (!s2)
+		return (0);
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
-	if (!s1 || !s2)
-		return (0);
 	if (!(comb_str = (char *)malloc(sizeof(char) * (len_s1 + len_s2) + 1)))
 		return (0);
 	ft_memcpy(comb_str, s1, len_s1);
