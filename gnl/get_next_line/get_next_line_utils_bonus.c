@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jinchoi <jinchoi@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/16 02:54:20 by jinchoi           #+#    #+#             */
-/*   Updated: 2021/01/22 16:28:11 by mtak             ###   ########.fr       */
+/*   Created: 2021/01/23 03:18:52 by mtak              #+#    #+#             */
+/*   Updated: 2021/01/23 03:19:00 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char		*ft_strjoin_f(char *s1, char *s2)
 {
