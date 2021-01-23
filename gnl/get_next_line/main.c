@@ -6,7 +6,7 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 06:33:10 by mtak              #+#    #+#             */
-/*   Updated: 2021/01/19 09:54:08 by mtak             ###   ########.fr       */
+/*   Updated: 2021/01/19 12:25:02 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(void)
 	int		ret;
 
 	fd = open("test.txt",O_RDONLY);
-	while ((ret = get_next_line(fd,&line)) >= 0)
+	while ((ret = get_next_line(fd,&line)) > 0)
 	{
 		printf("%s\n",line);
 		free(line);
