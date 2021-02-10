@@ -6,7 +6,7 @@
 
 char	*ft_strdup(const char *str);
 size_t	ft_strlen(const char *s);
-int	ft_isdigit(int c);
-int	ft_toupper(int c);
+int		ft_isdigit(int c);
+int		ft_toupper(int c);
 
 #endif
