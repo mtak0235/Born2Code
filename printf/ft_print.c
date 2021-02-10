@@ -24,8 +24,8 @@ int print_char(t_flag *flag, va_list ap)
 
 int print_string(t_flag *flag, va_list ap)
 {
-	int cnt;
-	char *str;
+	int		cnt;
+	char	*str;
 	int len;
 	int i;
 	
