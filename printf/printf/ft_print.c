@@ -172,6 +172,7 @@ int print_hex(t_flag *flag, va_list ap, int pin)
 
 int print_percent(t_flag *flag)
 {
+	init_flag(flag);
 	write(1, "%", 1);
 	return (1);
 }
