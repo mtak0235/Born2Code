@@ -24,8 +24,8 @@ int print_char(t_flag *flag, va_list ap)
 
 int print_string(t_flag *flag, va_list ap)
 {
-	int		cnt;
-	char	*str;
+	int cnt;
+	char *str;
 	int len;
 	int i;
 	
@@ -172,7 +172,13 @@ int print_hex(t_flag *flag, va_list ap, int pin)
 
 int print_percent(t_flag *flag)
 {
-	init_flag(flag);
+	int cnt;
+
+	cnt = 1;
 	write(1, "%", 1);
-	return (1);
+	while (--(flag->width))
+	{
+		write(1, " ", 1);
+	}
+	return (cnt);
 }
