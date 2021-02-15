@@ -58,7 +58,7 @@ void	fit_flag(t_flag *flag)
 	if (flag->width < 0)
 	{
 		flag->width *= -1;
-		flag->minus = 0;
+		flag->minus = 1;
 	}
 	if (flag->precision >= 0)
 		flag->zero = 0;
