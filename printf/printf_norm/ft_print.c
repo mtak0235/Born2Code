@@ -61,11 +61,12 @@ int print_ptr(t_flag *flag, va_list ap)
 
 	cnt = 2;
 	str = int2hex(va_arg(ap, unsigned long long), &cnt);
+	i = 0;
 	if (flag->minus)
 	{
 		write(1, "0x", 2);
-		while (*str)
-			write(1, str++, 1);
+		while (str[i])
+			write(1, &str[i++], 1);
 	}
 	i = 0;
 	while (i++ <= flag->width - cnt)
