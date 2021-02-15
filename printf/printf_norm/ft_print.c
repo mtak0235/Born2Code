@@ -10,8 +10,6 @@ int print_char(t_flag *flag, va_list ap)
 	c = (char)va_arg(ap, int);
 	if (flag->width < 1)
 		flag->width = 1;
-	if (flag->minus == 1)
-		write(1, &c, 1);
 	while (--(flag->width))
 	{
 		write(1, " ",1);
@@ -28,11 +26,11 @@ int print_string(t_flag *flag, va_list ap)
 	char *str;
 	int len;
 	int i;
-	
+
 	if(!(str = va_arg(ap, char *)))
 	{
 		write(1, "(null)", 6);
-		return (0);
+		return (-1);
 	}
 	if (flag->precision == 0)
 		return (0);
@@ -61,22 +59,22 @@ int print_ptr(t_flag *flag, va_list ap)
 
 	cnt = 2;
 	str = int2hex(va_arg(ap, unsigned long long), &cnt);
-	i = 0;
 	if (flag->minus)
 	{
 		write(1, "0x", 2);
+		i = 0;
 		while (str[i])
 			write(1, &str[i++], 1);
 	}
-	i = 0;
-	while (i++ <= flag->width - cnt)
+	i = flag->width - cnt - 1;
+	while (--i)
 	{
 		write(1, " ", 1);
 		cnt++;
 	}
 	i = 0;
 	if (!flag->minus)
-	{
+	{	
 		write(1, "0x", 2);
 		while (str[i])
 			write(1, &str[i++], 1);
@@ -97,7 +95,7 @@ int print_int(t_flag *flag, va_list ap)
 	str = int2str(va_arg(ap, int), &len);
 	sign = (str[i] == '-') ? 1 : 0;
 	cnt = 0;
-	if (flag->width > len && flag->width > flag->precision && !flag->zero)
+	if (flag->width > len && flag->width > flag->precision && !flag->zero && !flag->minus)
 		while (i++ < (cnt = flag->width - ((len <= flag->precision) ? flag->precision : len)))
 			write(1, " ",1);
 	i = 0;
@@ -112,6 +110,10 @@ int print_int(t_flag *flag, va_list ap)
 		write(1, &str[sign + i++], 1);
 		cnt++;
 	}
+	i = 0;
+	if (flag->width > len && flag->width > flag->precision && !flag->zero && flag->minus)
+		while (i++ < (cnt = flag->width - ((len <= flag->precision) ? flag->precision : len)))
+		write(1, " ",1);
 	free(str);
 	return (cnt);
 }
@@ -126,7 +128,7 @@ int print_uint(t_flag *flag, va_list ap)
 	i = 0;
 	str = int2str(va_arg(ap, unsigned int), &len);
 	cnt = 0;
-	if (flag->width > len && flag->width > flag->precision && !flag->zero)
+	if (flag->width > len && flag->width > flag->precision && !flag->zero && !flag->minus)
 		while (i++ < (cnt = flag->width - ((len <= flag->precision) ? flag->precision : len)))
 			write(1, " ",1);
 	i = 0;
@@ -139,6 +141,10 @@ int print_uint(t_flag *flag, va_list ap)
 		write(1, &str[i++], 1);
 		cnt++;
 	}
+	i = 0;
+	if (flag->width > len && flag->width > flag->precision && !flag->zero && !flag->minus)
+		while (i++ < (cnt = flag->width - ((len <= flag->precision) ? flag->precision : len)))
+			write(1, " ",1);
 	free(str);
 	return (cnt);
 }
@@ -162,7 +168,7 @@ int print_hex(t_flag *flag, va_list ap, int pin)
 			write(1, "0", 1);
 	i = 0;
 	while (str[i])
-	{	
+	{
 		str[i] = (pin == 1 && 'a' <= str[i] && str[i] <= 'z') ? str[i] - 32 : str[i];
 		write(1, &str[i++], 1);
 		cnt++;
@@ -179,7 +185,6 @@ int print_percent(t_flag *flag)
 	write(1, "%", 1);
 	while (--(flag->width))
 	{
-		cnt++;
 		write(1, " ", 1);
 	}
 	return (cnt);
