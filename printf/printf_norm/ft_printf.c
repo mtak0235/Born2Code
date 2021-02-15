@@ -62,18 +62,17 @@ int is_valid_format(t_flag *flag, char *str, va_list ap )
 			i++;
 	else if (str[i] == '*')
 		i += check_width(str[i], ap, flag, 2);
-
-	if (str[i] == '.')
+	if (str[i] == '.' && str[i + 1] == '*')
 	{
 		i = i + 1;
+		i += check_precision(str[i], ap, flag, 2);
+	}
+  	else if (str[i] == '.')
+	{
+		i ++;
 		flag->precision = 0;
 		while(check_precision(str[i], ap, flag, 1))
 			i++;
-	}
-  	else if (str[i] == '.' && str[i + 1] == '*')
-	{
-		i++;
-		i += check_precision(str[i], ap, flag, 2);
 	}
 	if (!check_type(str[i], flag))
 		return (i);
