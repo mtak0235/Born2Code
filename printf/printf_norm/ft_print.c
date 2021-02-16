@@ -28,28 +28,24 @@ int print_string(t_flag *flag, va_list ap)
 	char *str;
 	int len;
 	int i;
+	int j;
 	
 	if(!(str = va_arg(ap, char *)))
 	{
 		write(1, "(null)", 6);
-		return (0);
+		return (-1);
 	}
-	if (flag->precision == 0)
-		return (0);
 	len = ft_strlen(str);
-	i = len < flag->precision || flag->precision == -1? len : flag->precision;
+	i = len < flag->precision || (flag->precision == -1) ? len : flag->precision;
+	i = i < 0 ? len : i;
 	cnt = flag->width < i ? i : flag->width;
-	if (flag->minus)
-	{
-		while (i--)
-			write(1, str++, 1);
-		i = len < flag->precision || flag->precision == -1? len : flag->precision;
-	}
-	while (flag->width-- - i > 0)
+	j = (flag->width) - i;
+	while (j > 0 && !flag->minus)
 		write(1," ",1);
-	if (!flag->minus)
-		while (i--)
-			write(1, str++, 1);
+	while (i-- && *str)
+		write(1, str++, 1);
+	while (j-- > 0 && flag->minus)
+		write(1," ",1);
 	return (cnt);
 }
 
