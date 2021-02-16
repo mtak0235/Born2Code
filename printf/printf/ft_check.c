@@ -19,7 +19,7 @@ int check_precision(int c, va_list ap, t_flag *flag, int pin)
     	flag->precision = (flag->precision) * 10 + c - '0';
     	return (1);
 	}
-	else if (c == '*' && pin == 2)
+	else if (pin == 2)
 	{
     	flag->precision = va_arg(ap, int);
 		flag->star = 1;
@@ -27,7 +27,6 @@ int check_precision(int c, va_list ap, t_flag *flag, int pin)
   	}
 	return (0);
 }
-
 
 int check_width(int c, va_list ap, t_flag *flag, int pin)
 {
