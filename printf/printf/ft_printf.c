@@ -104,6 +104,5 @@ int param_print(t_flag *flag, va_list ap)
 		count2print = print_hex(flag, ap, 1);
 	else if (flag->type == 9)
 		count2print = print_percent(flag);
-
 	return (count2print);
 }
