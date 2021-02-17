@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 #include "ft_utils.h"
 
-static void             print_flag(t_flag *flag, char *num, size_t precision_size)
+static void             print_flag(t_flag *flag, char *num, int precision_size)
 {
         if (flag->indent)
                 ft_strdup(" ");
@@ -27,7 +27,7 @@ static void             print_flag(t_flag *flag, char *num, size_t precision_siz
 int                             print_string(t_flag *flag, va_list ap)
 {
         char    *str;
-        size_t  str_size;
+        int  str_size;
         int             pin;
 
         pin = 0;
@@ -40,16 +40,16 @@ int                             print_string(t_flag *flag, va_list ap)
                         return (0);
         }
         str_size = ft_strlen(str);
-        if (flag->precision >= 0 && (size_t)flag->precision > str_size)
-                flag->precision = (int)str_size;
+        if (flag->precision >= 0 && flag->precision > str_size)
+                flag->precision = str_size;
         else if (flag->precision < 0)
-                flag->precision = (int)str_size;
+                flag->precision = str_size;
         str_size = flag->precision;
         flag->width = str_size > flag->width ? str_size : flag->width;
         print_flag(flag, str, str_size);
         if (pin)
                 free(str);
-        return ((int)flag->width);
+        return (flag->width);
 }
 
 int                             print_char(t_flag *flag, va_list ap)
@@ -66,7 +66,7 @@ int                             print_char(t_flag *flag, va_list ap)
         flag->precision = 1;
         print_flag(flag, str, 1);
         free(str);
-        return ((int)flag->width + flag->indent);
+        return (flag->width + flag->indent);
 }
 
 int                             print_percent(t_flag *flag)
@@ -83,5 +83,5 @@ int                             print_percent(t_flag *flag)
         flag->precision = 1;
         print_flag(flag, str, 1);
         free(str);
-        return ((int)flag->width + flag->indent);
+        return (flag->width + flag->indent);
 }

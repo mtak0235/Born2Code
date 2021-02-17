@@ -1,7 +1,8 @@
 #include "ft_printf.h"
 #include "ft_utils.h"
+#include "libft.h"
 
-static void             print_flag(t_flag *flag, char *num, size_t size)
+static void             print_flag(t_flag *flag, char *num, int size)
 {
         int     minus;
 
@@ -33,37 +34,36 @@ static void             print_flag(t_flag *flag, char *num, size_t size)
 int                             print_int(t_flag *flag, va_list ap)
 {
         char    *num;
-        size_t  pure_size;
-        size_t  num_size;
-		int len;
+        int  pure_size;
+        int  num_size;
 
-        num = int2str(va_arg(ap, int), &len);
+        num = ft_itoa(va_arg(ap, int)); 
         if (num == NULL)
                 return (0);
         if (num[0] == '0' && flag->precision == 0)
                 num[0] = '\0';
         num_size = ft_strlen(num);
         pure_size = num[0] == '-' ? num_size - 1 : num_size;
-        if (flag->precision >= 0 && (size_t)flag->precision > pure_size)
+        if (flag->precision >= 0 && flag->precision > pure_size)
         {
-                flag->precision = flag->precision - (int)pure_size;
+                flag->precision = flag->precision - pure_size;
                 pure_size = pure_size + flag->precision;
         }
         else if (flag->zero == 1 && flag->width > num_size)
         {
-                flag->precision = (int)(flag->width - num_size);
+                flag->precision = (flag->width - num_size);
                 pure_size = pure_size + flag->precision;
         }
         else
                 flag->precision = 0;
         print_flag(flag, num, pure_size);
-        return ((int)flag->width + flag->indent);
+        return (flag->width + flag->indent);
 }
 
 int                             print_uint(t_flag *flag, va_list ap)
 {
         char    *num;
-        size_t  num_size;
+        int  num_size;
 		int len;
 
         num = int2str(va_arg(ap, unsigned int), &len);
@@ -72,19 +72,19 @@ int                             print_uint(t_flag *flag, va_list ap)
         if (num[0] == '0' && flag->precision == 0)
                 num[0] = '\0';
         num_size = ft_strlen(num);
-        if (flag->precision >= 0 && (size_t)flag->precision > num_size)
+        if (flag->precision >= 0 && flag->precision > num_size)
         {
-                flag->precision = flag->precision - (int)num_size;
+                flag->precision = flag->precision - num_size;
                 num_size = num_size + flag->precision;
         }
         else if (flag->zero == 1 && flag->width > num_size)
         {
-                flag->precision = (int)(flag->width - num_size);
+                flag->precision = (flag->width - num_size);
                 num_size = num_size + flag->precision;
         }
         else
                 flag->precision = 0;
         print_flag(flag, num, num_size);
-        return ((int)flag->width + flag->indent);
+        return (flag->width + flag->indent);
 }
 
