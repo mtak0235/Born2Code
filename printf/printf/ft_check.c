@@ -28,6 +28,7 @@ int check_precision(int c, va_list ap, t_flag *flag, int pin)
 	return (0);
 }
 
+
 int check_width(int c, va_list ap, t_flag *flag, int pin)
 {
 	if (ft_isdigit(c) && pin == 1)
