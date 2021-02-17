@@ -1,5 +1,6 @@
 #include "ft_printf.h"
 #include "ft_utils.h"
+#include "libft.h"
 
 static void print_flag(t_flag *flag, char *num, int size, int ost)
 {

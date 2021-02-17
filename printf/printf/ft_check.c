@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 #include "ft_utils.h"
-
+#include "libft.h"
 int check_flag(t_flag *flag, char c)
 {
 	if (c == '-')

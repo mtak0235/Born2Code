@@ -64,9 +64,8 @@ int                             print_uint(t_flag *flag, va_list ap)
 {
         char    *num;
         int  num_size;
-		int len;
 
-        num = int2str(va_arg(ap, unsigned int), &len);
+        num = ft_uitoa(va_arg(ap, unsigned int));
         if (num == NULL)
                 return (0);
         if (num[0] == '0' && flag->precision == 0)
