@@ -3,7 +3,7 @@
 
 #include <stdarg.h>
 #include <unistd.h>
-
+#include <stdio.h>
 int ft_printf(const char *format, ...);
 int parse(const char *format, va_list ap);
 
@@ -34,8 +34,9 @@ int print_int(t_flag *flag, va_list ap);
 int print_uint(t_flag *flag, va_list ap);
 int print_hex(t_flag *flag, va_list ap, int pin);
 int print_percent(t_flag *flag);
-char *int2hex(unsigned long long num, int *cnt);
+char *int2hex(unsigned long long num, int pin);
 int int2hex_len(unsigned long long n);
 char *int2str(long long n, int *len);
+char *ptr2hex(unsigned long long num);
 
 #endif
