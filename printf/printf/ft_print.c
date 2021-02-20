@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/19 14:58:06 by mtak              #+#    #+#             */
-/*   Updated: 2021/02/19 14:58:11 by mtak             ###   ########.fr       */
+/*   Created: 2021/02/19 16:09:04 by mtak              #+#    #+#             */
+/*   Updated: 2021/02/20 04:25:29 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "ft_utils.h"
 #include "libft.h"
 
-static void print_flag(t_flag *flag, char *num, int size, int ost)
+static void	print_flag(t_flag *flag, char *num, int size, int ost)
 {
 	if (flag->indent)
 		ft_putchar_fd(' ', 1);
@@ -39,7 +38,7 @@ int			print_hex(t_flag *flag, va_list ap, int pin)
 {
 	char	*num;
 	int		num_size;
-	
+
 	num = int2hex(va_arg(ap, unsigned int), pin);
 	if (num == NULL)
 		return (0);
@@ -52,7 +51,7 @@ int			print_hex(t_flag *flag, va_list ap, int pin)
 		num_size = num_size + flag->precision;
 	}
 	else if (flag->zero == 1 && flag->width > num_size)
-	{	
+	{
 		flag->precision = flag->width - num_size;
 		num_size = num_size + flag->precision;
 	}

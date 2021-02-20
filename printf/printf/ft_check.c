@@ -6,12 +6,11 @@
 /*   By: mtak <mtak@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:05:04 by mtak              #+#    #+#             */
-/*   Updated: 2021/02/17 16:09:54 by mtak             ###   ########.fr       */
+/*   Updated: 2021/02/20 05:13:00 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "ft_utils.h"
 #include "libft.h"
 
 int	check_flag(t_flag *flag, char c)
@@ -32,11 +31,19 @@ int	check_precision(int c, va_list ap, t_flag *flag, int pin)
 		flag->precision = (flag->precision) * 10 + c - '0';
 		return (1);
 	}
+	else if (pin == 1 && c == '.')
+	{
+		if (flag->precision < 0)
+		{
+			flag->precision = 0;
+			return (1);
+		}
+		return (0);
+	}
 	else if (pin == 2)
 	{
 		flag->precision = va_arg(ap, int);
-		flag->star = 1;
-		return (1);
+		return (2);
 	}
 	return (0);
 }
