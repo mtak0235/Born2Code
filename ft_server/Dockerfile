@@ -11,4 +11,4 @@ COPY ./srcs/config.inc.php ./tmp
 
 EXPOSE 80 443
 
-CMD bash run.sh
+ENTRYPOINT bash run.sh
