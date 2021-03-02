@@ -11,4 +11,6 @@ COPY ./srcs/config.inc.php ./tmp
 
 EXPOSE 80 443
 
+ENV AUTOINDEX on
+
 ENTRYPOINT bash run.sh
