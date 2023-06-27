@@ -1,7 +1,3 @@
-# 0. Subject 
-
-- [Subject]()
-
 # 1. What is Libft?
 
 This project is the implementation of `Libc`. There is a restriction of using library on carrying out the projects in 42.
