@@ -1,11 +1,14 @@
+# 01. Subject
+https://velog.io/@mtak0235/GetNextLine-introduction
+
 # 1. What is get_next_line?
 This project is the implementation of a function which returns a sentence separated with newline.
 
 # 2. Which are the allowed external functions?
 
-read on <unistd.h>
-malloc on <stdlib.h>
-free on <stdlib.h>
+1. `read` on <unistd.h>
+2. `malloc` on <stdlib.h>
+3. `free` on <stdlib.h>
 
 # 3. What is the function prototype of the get_next_line?
 |Name|Parameters|Return|
