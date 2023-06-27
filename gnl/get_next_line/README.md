@@ -1,18 +1,18 @@
-1. What is get_next_line?
+# 1. What is get_next_line?
 This project is the implementation of a function which returns a sentence separated with newline.
 
-2. Which are the allowed external functions?
+# 2. Which are the allowed external functions?
 
 read on <unistd.h>
 malloc on <stdlib.h>
 free on <stdlib.h>
 
-3. What is the function prototype of the get_next_line?
+# 3. What is the function prototype of the get_next_line?
 |Name|Parameters|Return|
 |--|--|--|
 |get_next_line|int fd, char **line|int|
 
-5. Features
+# 4. Features
 The mandatory and bonus in the project can deal with the multiple fd.
 When the function is called on the outside of the moudule, the program can hold multiple files which are using the gnl function with file opened.
 
@@ -22,7 +22,7 @@ The gnl function is using Buffer which perform saving values from read function.
 
 The rest of the string after newline will be saved by static variable. It will not be disappeared before the terminating program or reading the End of the File.
 
-5. How does it call on the outside of the module?
+# 5. How does it call on the outside of the module?
 ```c
 // This is just an example of reading a line in test.txt by opening it Read-Only.
 #include <fcntl.h>
